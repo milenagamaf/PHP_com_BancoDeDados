@@ -72,11 +72,13 @@ function post_clean($post_field, $type = 'string')
             // Sanitiza strings
             $post_value = htmlspecialchars($_POST[$post_field]);
             break;
+
         case 'email':
 
             // Sanitiza endereços de e-mail
             $post_value = filter_input(INPUT_POST, $post_field, FILTER_SANITIZE_EMAIL);
             break;
+
     endswitch;
 
     // Remove excesso de espaços
